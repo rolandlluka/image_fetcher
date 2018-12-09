@@ -7,7 +7,7 @@ class ImageFetcher
     file_to_read.each_line do |line|
     file_name = line.split('/').last
     #we open e file write for each link
-    File.open("files/#{file_name}", 'wb') do |f|
+    File.open("fetched_files/#{file_name}", 'wb') do |f|
       link = line.delete!("\n")
       f << open(link).read
     end
